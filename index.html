@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF‑8">
-<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AquaShop Pro</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* Quick logo fix CSS */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111;
+    padding: 10px 20px;
+    color: #fff;
+}
+.logo img {
+    width: 150px; /* Adjust logo size here */
+    display: block;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+nav ul li {
+    cursor: pointer;
+}
+.cart-btn button {
+    background-color: #ff9800;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #000;
+    color: #fff;
+}
+.product-section {
+    padding: 20px;
+}
+</style>
 </head>
 <body>
-  <header>
-  <img src="/logo.png">
-  </header>
 
 <header>
-<div class="logo"><img src="images/logo.png" alt="Logo"></div>
-<input type="text" id="searchBar" placeholder="Search Products..." onkeyup="searchProducts()">
-<nav>
-<ul id="categoryList">
-<li onclick="filterCategory('all')">All</li>
-<li onclick="filterCategory('Aquariums')">Aquariums</li>
-<li onclick="filterCategory('Power Filters')">Power Filters</li>
-<li onclick="filterCategory('Air Pumps')">Air Pumps</li>
-<li onclick="filterCategory('Lights')">Lights</li>
-<li onclick="filterCategory('Foods')">Foods</li>
-<li onclick="filterCategory('Tray Filters')">Tray Filters</li>
-<li onclick="filterCategory('Sponge Filters')">Sponge Filters</li>
-<li onclick="filterCategory('Heaters')">Heaters</li>
-<li onclick="filterCategory('Sand & Stones')">Sand & Stones</li>
-<li onclick="filterCategory('Artificial Plants')">Artificial Plants</li>
-<li onclick="filterCategory('Live Plants')">Live Plants</li>
-</ul>
-</nav>
-<div class="cart-btn"><button onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button></div>
+    <div class="logo">
+        <!-- Logo path -->
+        <img src="images/logo.png" alt="AquaShop Pro Logo">
+    </div>
+    <input type="text" id="searchBar" placeholder="Search Products..." onkeyup="searchProducts()">
+    <nav>
+        <ul id="categoryList">
+            <li onclick="filterCategory('all')">All</li>
+            <li onclick="filterCategory('Aquariums')">Aquariums</li>
+            <li onclick="filterCategory('Power Filters')">Power Filters</li>
+            <li onclick="filterCategory('Air Pumps')">Air Pumps</li>
+            <li onclick="filterCategory('Lights')">Lights</li>
+            <li onclick="filterCategory('Foods')">Foods</li>
+            <li onclick="filterCategory('Tray Filters')">Tray Filters</li>
+            <li onclick="filterCategory('Sponge Filters')">Sponge Filters</li>
+            <li onclick="filterCategory('Heaters')">Heaters</li>
+            <li onclick="filterCategory('Sand & Stones')">Sand & Stones</li>
+            <li onclick="filterCategory('Artificial Plants')">Artificial Plants</li>
+            <li onclick="filterCategory('Live Plants')">Live Plants</li>
+        </ul>
+    </nav>
+    <div class="cart-btn">
+        <button onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
+    </div>
 </header>
 
 <section class="hero">
-<h1>Welcome to AquaShop Pro</h1>
-<p>Professional Aquarium Store</p>
-<button onclick="scrollToSection('products')">Shop Now</button>
+    <h1>Welcome to AquaShop Pro</h1>
+    <p>Professional Aquarium Store</p>
+    <button onclick="scrollToSection('products')">Shop Now</button>
 </section>
 
 <section id="products" class="product-section">
-<div class="products" id="productGrid">
-<!-- Products added here -->
-</div>
+    <div class="products" id="productGrid">
+        <!-- Products added here -->
+    </div>
 </section>
 
 <div id="cart" class="cart-modal">
-<h2>Your Cart</h2>
-<div id="cart-items"></div>
-<button onclick="checkout()">Checkout</button>
-<button onclick="closeCart()">Close</button>
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <button onclick="checkout()">Checkout</button>
+    <button onclick="closeCart()">Close</button>
 </div>
 
 <script src="script.js"></script>
